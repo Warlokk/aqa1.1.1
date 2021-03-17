@@ -12,9 +12,9 @@ public class CashbackHackServiceTest {
     }
 
     @org.testng.annotations.Test
-    public void shouldRemainEqualBoundary() {
+    public void shouldNotRemainEqualBoundary() {
          int purchase = 1000;
-        assertEquals(service.remain(purchase), 1000);
+        assertEquals(service.remain(purchase), 0);
     }
 
     @org.testng.annotations.Test
@@ -24,7 +24,7 @@ public class CashbackHackServiceTest {
     }
 
     @org.testng.annotations.Test
-    public void shouldRemainZeroPurchase() {
+    public void shouldRemainBoundaryIfZeroPurchase() {
         int purchase = 0;
         assertEquals(service.remain(purchase), 1000);
     }
